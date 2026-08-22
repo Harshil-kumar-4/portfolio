@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Harshil Kumar // DevOps — Cloud, SRE &amp; AIOps Engineer</title>
+<meta name="description" content="Pindikuru Harshil Kumar — Associate Software Engineer, DevOps. Azure automation, DevSecOps pipelines, and an autonomous multi-cloud FinOps agent built with LangGraph and Python." />
+
+<!-- Theme applied before paint to prevent flash -->
+<script>
+  (function () {
+    var saved = localStorage.getItem("theme");
+    var wantsDark = saved ? saved === "dark" : true;
+    document.documentElement.classList.toggle("dark", wantsDark);
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { darkMode: 'class' };
+</script>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 font-body antialiased transition-colors duration-500">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============ SVG ICON SPRITE (inline — no external icon CDN, nothing renders blank) ============ -->
+<svg class="hidden" aria-hidden="true">
+  <defs>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 19h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.5c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.83-2.35 4.68-4.58 4.92.36.32.68.94.68 1.9v2.82c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M7.5 10.5v6M7.5 7.8v.02M11.5 16.5v-3.6c0-1.4.9-2.4 2.2-2.4 1.3 0 2.3 1 2.3 2.4v3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.2l1.3 4.3-2 1.5a12 12 0 0 0 6.7 6.7l1.5-2 4.3 1.3V19a2 2 0 0 1-2.2 2A16 16 0 0 1 3 5.2 2 2 0 0 1 5 4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-rss" viewBox="0 0 24 24"><path d="M5 5c7.7 0 14 6.3 14 14M5 11.5A7.5 7.5 0 0 1 12.5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="6" cy="18" r="1.6" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v.5" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l6 6L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 9l3 3-3 3M13 15h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="10" y="10" width="4" height="4" stroke="currentColor" stroke-width="1.5"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 13l9 5 9-5M3 17.5l9 5 9-5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-boxes" viewBox="0 0 24 24"><path d="M12 2l4.5 2.6v5.2L12 12.4l-4.5-2.6V4.6L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 12.4v6.2M12 18.6l-5-2.9v-4.8M12 18.6l5-2.9v-4.8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2.2" stroke="currentColor" stroke-width="1.6"/><circle cx="19" cy="6" r="2.2" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="18" r="2.2" stroke="currentColor" stroke-width="1.6"/><path d="M6.9 7.2L11 16M17.1 7.2L13 16M7.2 6h9.6" stroke="currentColor" stroke-width="1.4"/></symbol>
+    <symbol id="i-git-branch" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2" stroke="currentColor" stroke-width="1.7"/><circle cx="6" cy="19" r="2" stroke="currentColor" stroke-width="1.7"/><circle cx="18" cy="9" r="2" stroke="currentColor" stroke-width="1.7"/><path d="M6 7v10M6 12c0-4 6-3.5 12-3.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l2-7 4 14 2-7h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 0 1-.5-8.97A5.5 5.5 0 0 1 17.2 8.1 4 4 0 0 1 17 18H7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.4 4.6L18 9l-4.6 1.4L12 15l-1.4-4.6L6 9l4.6-1.4L12 3Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M19 15l.7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7L19 15Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5" stroke="currentColor" stroke-width="1.7"/><path d="M8.5 12.5L7 21l5-2.5L17 21l-1.5-8.5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7" ry="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M5 5.5V18c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V5.5M5 11.75c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="18" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M7 7h.01M7 17h.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M6 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2c1 3-3 4-3 8a3 3 0 0 0 6 0c1 1 1.5 2.5 1.5 4A6.5 6.5 0 1 1 8 9.5c1.5 0 1-2.5 4-7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v5M9 13.5v1M15 13.5v1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M2 12h2M20 12h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ AMBIENT BACKGROUND ============ -->
+<div class="bg-layer" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-aurora bg-aurora--one"></div>
+  <div class="bg-aurora bg-aurora--two"></div>
+</div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <nav class="nav-inner" aria-label="Primary">
+    <a href="#home" class="nav-logo">
+      HARSHIL KUMAR <span class="nav-logo__accent">// DEVOPS</span>
+    </a>
+
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle light and dark theme" aria-pressed="false">
+        <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+        <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+      </button>
+      <button class="nav-toggle icon-btn lg:hidden" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
+        <svg class="icon" id="navToggleIcon"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#certifications" class="nav-link">Certifications</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li>
+        <a href="HarshilKumar_Pindikuru_resume.pdf" download="HarshilKumar_Pindikuru_resume.pdf" class="nav-link nav-link--resume">
+          <svg class="icon icon-sm"><use href="#i-download"/></svg> Resume
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO — BENTO GRID ============ -->
+  <section class="hero" id="home">
+    <div class="section-inner">
+
+      <p class="eyebrow reveal" data-reveal>
+        <svg class="icon icon-sm"><use href="#i-bot"/></svg>
+        Currently teaching production systems to reason about their own cost &amp; safety
+      </p>
+
+      <div class="bento reveal" data-reveal>
+
+        <!-- Card A — Profile & Pitch -->
+        <article class="bento-card bento-a">
+          <h1 class="hero-name">Pindikuru<br/>Harshil Kumar</h1>
+          <p class="hero-title">Associate Software Engineer <span class="hero-title__divider">—</span> DevOps</p>
+          <p class="hero-typed" aria-live="polite">
+            <span class="hero-typed__prefix">//</span>
+            <span id="typedRole"></span><span class="hero-typed__cursor" aria-hidden="true">|</span>
+          </p>
+          <p class="hero-summary">
+            DevOps engineer who built hands-on cost optimization judgment through manual cloud
+            rightsizing work, then applied it to engineer an autonomous FinOps agent (Python,
+            LangGraph) that encodes production-safety guardrails static tools ignore. Experienced
+            across Azure automation, DevSecOps pipelines, and telemetry-driven infrastructure tooling.
+          </p>
+          <div class="hero-cta">
+            <a href="HarshilKumar_Pindikuru_resume.pdf" download="HarshilKumar_Pindikuru_resume.pdf" class="btn btn--primary">
+              <svg class="icon icon-sm"><use href="#i-download"/></svg> Download Resume
+            </a>
+            <a href="https://www.linkedin.com/in/harshil-kumar-pindikuru-267b12250/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
+              <svg class="icon icon-sm"><use href="#i-linkedin"/></svg> LinkedIn
+            </a>
+          </div>
+        </article>
+
+        <!-- Card B — Primary impact stat -->
+        <article class="bento-card bento-b">
+          <svg class="icon stat-icon"><use href="#i-zap"/></svg>
+          <p class="stat-figure">$13.4k<span class="stat-figure__plus">+</span></p>
+          <p class="stat-label">Reclaimed</p>
+          <p class="stat-sub">Annual cloud savings — ~40% cost drop across 14 audited Azure App &amp; Function services.</p>
+        </article>
+
+        <!-- Card C — AIOps efficiency stat -->
+        <article class="bento-card bento-c">
+          <svg class="icon stat-icon stat-icon--cyan"><use href="#i-cpu"/></svg>
+          <p class="stat-figure stat-figure--cyan">75–85%</p>
+          <p class="stat-label">Token Reduction</p>
+          <p class="stat-sub">Cut from the FinOps agent's pipeline with zero drop in decision quality — details on request.</p>
+        </article>
+
+        <!-- Card F — Quick-link CTAs -->
+        <article class="bento-card bento-f">
+          <a href="#contact" class="quick-link">
+            <span class="quick-link__icon"><svg class="icon"><use href="#i-mail"/></svg></span>
+            <span class="quick-link__text">
+              <span class="quick-link__title">Contact Me</span>
+              <span class="quick-link__sub">Let's talk about a role</span>
+            </span>
+            <svg class="icon icon-sm quick-link__arrow"><use href="#i-arrow-right"/></svg>
+          </a>
+          <a href="https://harshils.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="quick-link">
+            <span class="quick-link__icon"><svg class="icon"><use href="#i-rss"/></svg></span>
+            <span class="quick-link__text">
+              <span class="quick-link__title">Read the Blog</span>
+              <span class="quick-link__sub">Notes on DevOps &amp; AIOps</span>
+            </span>
+            <svg class="icon icon-sm quick-link__arrow"><use href="#i-arrow-up-right"/></svg>
+          </a>
+          <a href="https://github.com/Harshil-kumar-4" target="_blank" rel="noopener noreferrer" class="quick-link">
+            <span class="quick-link__icon"><svg class="icon"><use href="#i-github"/></svg></span>
+            <span class="quick-link__text">
+              <span class="quick-link__title">GitHub Profile</span>
+              <span class="quick-link__sub">Code &amp; repositories</span>
+            </span>
+            <svg class="icon icon-sm quick-link__arrow"><use href="#i-arrow-up-right"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINOPS ARCHITECTURE DEEP DIVE ============ -->
+  <section class="finops" id="finops">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal" data-reveal>System Architecture</p>
+      <h2 class="section-title reveal" data-reveal>Autonomous Multi-Cloud FinOps Engine</h2>
+      <p class="section-sub reveal" data-reveal>LangGraph + Python — a state-machine agent that automates rightsizing analysis while encoding the production-safety judgment a human SRE applies instinctively. <span class="section-sub__note">A few implementation details below are intentionally kept high-level — ask me about the internals.</span></p>
+
+      <div class="finops-grid">
+        <div class="finops-highlights">
+          <div class="finops-item reveal" data-reveal>
+            <svg class="icon finops-item__icon"><use href="#i-shield"/></svg>
+            <div>
+              <h3>SRE Crash-Detection Guardrail</h3>
+              <p>Before recommending a downsize, the agent checks whether the service is already failing — a deliberate safeguard against false-positive resizing on anything actively crashing. <em>How</em> it makes that call is one of the more interesting design decisions in the system.</p>
+            </div>
+          </div>
+          <div class="finops-item reveal" data-reveal>
+            <svg class="icon finops-item__icon"><use href="#i-network"/></svg>
+            <div>
+              <h3>Multi-Cloud Abstraction</h3>
+              <p>A <code>ProviderRegistry</code> architecture that supports Azure, Databricks, and Snowflake behind one consistent interface.</p>
+            </div>
+          </div>
+          <div class="finops-item reveal" data-reveal>
+            <svg class="icon finops-item__icon"><use href="#i-lock"/></svg>
+            <div>
+              <h3>Deterministic Execution</h3>
+              <p>All monetary arithmetic and rate lookups are offloaded directly to Python — eliminating LLM hallucination risk from financial decisions.</p>
+            </div>
+          </div>
+          <div class="finops-item reveal" data-reveal>
+            <svg class="icon finops-item__icon"><use href="#i-activity"/></svg>
+            <div>
+              <h3>Token Efficiency Pipeline</h3>
+              <p>A deliberate data-shaping strategy cuts token usage 75–85% with zero drop in decision quality — the specific technique is part of the system's design, and one I'm happy to walk through in a conversation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulated Interactive Telemetry Console -->
+        <div class="console reveal" data-reveal aria-label="Simulated FinOps agent telemetry trace">
+          <div class="console__head">
+            <span class="console-dot console-dot--red"></span>
+            <span class="console-dot console-dot--yellow"></span>
+            <span class="console-dot console-dot--green"></span>
+            <span class="console__title">finops-agent — telemetry trace (simulated)</span>
+          </div>
+          <div class="console__body" id="consoleBody">
+            <p class="console-line" data-line>$ finops-agent audit --service app-svc-prod-07</p>
+            <p class="console-line" data-line><span class="c-muted">&gt;</span> fetching telemetry <span class="c-muted">::</span> azure_monitor/app-svc-prod-07</p>
+            <p class="console-line" data-line><span class="c-muted">&gt;</span> cpu: <span class="c-cyan">12.4%</span>&nbsp;&nbsp;mem: <span class="c-cyan">18.1%</span></p>
+            <p class="console-line" data-line><span class="c-muted">&gt;</span> candidate: <span class="c-emerald">DOWNSIZE</span> (Standard S2 → S1)</p>
+            <p class="console-line" data-line><span class="c-muted">&gt;</span> running guardrail: crash_loop_detector</p>
+            <p class="console-line console-line--kql" data-line><span class="c-muted">&gt;</span> guardrail logic: <span class="c-cyan">[proprietary — ask me]</span></p>
+            <p class="console-line" data-line><span class="c-muted">&gt;</span> crash_loop: <span class="c-red">TRUE</span></p>
+            <p class="console-line console-line--block" data-line>✕ DECISION: BLOCKED</p>
+            <p class="console-line console-line--indent" data-line>reason: "active crash loop detected — resizing suppressed to avoid masking failure"</p>
+            <p class="console-line console-line--indent" data-line>status: escalated_to_human_review</p>
+            <p class="console-line" data-line><span class="console-cursor">▌</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="experience" id="experience">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal" data-reveal>Work History</p>
+      <h2 class="section-title reveal" data-reveal>Experience &amp; Impact</h2>
+
+      <div class="timeline">
+        <div class="timeline__track" aria-hidden="true"><div class="timeline__fill" id="timelineFill"></div></div>
+
+        <article class="timeline-item reveal" data-reveal>
+          <div class="timeline-item__node"></div>
+          <div class="timeline-card">
+            <div class="timeline-card__meta">
+              <span class="timeline-card__date">Oct 2025 — Present</span>
+              <span class="badge badge--live">current</span>
+            </div>
+            <h3 class="timeline-card__role">Associate Software Engineer – DevOps</h3>
+            <p class="timeline-card__org">CoStrategix</p>
+
+            <div class="timeline-block">
+              <h4><svg class="icon icon-sm"><use href="#i-zap"/></svg> Cost Optimization → FinOps Agent Architecture</h4>
+              <ul>
+                <li>Manually audited live compute infrastructure and executed a targeted rightsizing initiative that reclaimed $13,400+ in annual cloud spend (~40% reduction on audited resources), building hands-on judgment for safe, telemetry-informed rightsizing.</li>
+                <li>Applying that judgment, designed and built an autonomous multi-cloud FinOps agent (LangGraph, Python; Azure, Databricks, Snowflake) that automates rightsizing analysis while encoding production-safety guardrails a human analyst applies instinctively but static tools ignore.</li>
+                <li>Engineered a KQL exception-log audit step as an SRE crash-detection guardrail, blocking downsizing recommendations on services in active crash loops before they reach a human reviewer.</li>
+                <li>Cut token usage ~75–85% by generating Python statistical profiles (P95/Max) instead of passing raw time-series data, lazy-loading exception logs only for approved candidates, offloading all financial math to Python, and implementing local semantic caching.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-block">
+              <h4><svg class="icon icon-sm"><use href="#i-activity"/></svg> SRE &amp; Operational Automation</h4>
+              <ul>
+                <li>Analyzed production telemetry and executed targeted KQL queries to isolate and eliminate recurring database deadlocks.</li>
+                <li>Developed a Python automation utility integrating the Azure CLI and Google Docs API to automate hourly incident logging, eliminating manual tracking overhead while preserving RCA data integrity.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-block">
+              <h4><svg class="icon icon-sm"><use href="#i-shield"/></svg> Platform DevSecOps &amp; Secure Infrastructure</h4>
+              <ul>
+                <li>Authored reusable Azure DevOps Task Groups adopted across .NET, Python, and Java teams to standardize security scanning guardrails (Semgrep, Trivy, SonarQube, Gitleaks, Checkov).</li>
+                <li>Built a custom Python parsing utility converting raw multi-scanner logs into interactive HTML vulnerability reports for developers.</li>
+                <li>Engineered CI/CD pipelines in Azure DevOps for a multi-tier platform; provisioned hardened environments via modular Azure Bicep templates, isolating App Services and PostgreSQL Flexible Servers behind Private Endpoints to eliminate public internet exposure.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-card__tags">
+              <span>Azure</span><span>LangGraph</span><span>KQL</span><span>Bicep</span><span>Azure DevOps</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal" data-reveal>
+          <div class="timeline-item__node"></div>
+          <div class="timeline-card">
+            <div class="timeline-card__meta">
+              <span class="timeline-card__date">Apr 2025 — May 2025</span>
+              <span class="badge badge--muted">internship</span>
+            </div>
+            <h3 class="timeline-card__role">DevOps Intern</h3>
+            <p class="timeline-card__org">HashedIn by Deloitte</p>
+            <div class="timeline-block">
+              <ul>
+                <li>Provisioned and managed cloud resources across AWS and Azure, maintaining environment consistency using Docker, Podman, and Kubernetes.</li>
+                <li>Automated CI/CD pipelines with Jenkins and GitHub Actions; wrote reusable Terraform configurations for infrastructure-as-code deployments.</li>
+              </ul>
+            </div>
+            <div class="timeline-card__tags">
+              <span>AWS</span><span>Azure</span><span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>Jenkins</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal" data-reveal>
+          <div class="timeline-item__node"></div>
+          <div class="timeline-card">
+            <div class="timeline-card__meta">
+              <span class="timeline-card__date">Lyzr AI Hackathon</span>
+              <span class="badge badge--accent">top 50 finalist</span>
+            </div>
+            <h3 class="timeline-card__role">InfraTwin AI — Agentic Cloud OS Prototype</h3>
+            <p class="timeline-card__org">
+              <a href="https://twin-forge-fresh-link-952m.architect.space/" target="_blank" rel="noopener noreferrer">Live Demo <svg class="icon icon-xs"><use href="#i-arrow-up-right"/></svg></a>
+            </p>
+            <div class="timeline-block">
+              <ul>
+                <li>Built an AI-driven infrastructure design system using LangGraph &amp; React Flow, converting natural-language prompts into visual cloud topologies and JSON blueprints.</li>
+                <li>Programmed continuous state drift detection and automated self-healing workflows during mock resource outages.</li>
+              </ul>
+            </div>
+            <div class="timeline-card__tags">
+              <span>LangGraph</span><span>React Flow</span><span>Drift Detection</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="projects" id="projects">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal" data-reveal>Selected Builds</p>
+      <h2 class="section-title reveal" data-reveal>Projects</h2>
+
+      <div class="projects-grid">
+        <article class="project-card reveal" data-reveal data-tilt>
+          <div class="project-card__top"><svg class="icon project-card__icon"><use href="#i-layers"/></svg></div>
+          <div class="project-card__body">
+            <h3>End-to-End 3-Tier Azure Deployment</h3>
+            <p>Deployed a full-stack static web app on Azure, with Azure DevOps CI/CD managing the full lifecycle from commit to cloud hosting.</p>
+            <div class="tag-row"><span>Azure</span><span>Azure DevOps</span><span>CI/CD</span></div>
+          </div>
+          <div class="project-card__links">
+            <a href="https://github.com/Harshil-kumar-4/3-Tier-Application-Azure" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+              <svg class="icon icon-xs"><use href="#i-github"/></svg> GitHub
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-reveal data-tilt>
+          <div class="project-card__top"><svg class="icon project-card__icon"><use href="#i-boxes"/></svg></div>
+          <div class="project-card__body">
+            <h3>Core DevOps Representation</h3>
+            <p>Containerized a Flask &amp; MySQL two-tier app with Docker for environment parity; configured a Jenkins CI/CD pipeline with automated security scanning.</p>
+            <div class="tag-row"><span>Flask</span><span>MySQL</span><span>Docker</span><span>Jenkins</span></div>
+          </div>
+          <div class="project-card__links">
+            <a href="https://github.com/Harshil-kumar-4/twotier-app" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+              <svg class="icon icon-xs"><use href="#i-github"/></svg> App
+            </a>
+            <a href="https://github.com/Harshil-kumar-4/jenkins-project" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+              <svg class="icon icon-xs"><use href="#i-github"/></svg> Pipeline
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-reveal data-tilt>
+          <div class="project-card__top"><svg class="icon project-card__icon"><use href="#i-network"/></svg></div>
+          <div class="project-card__body">
+            <h3>InfraTwin AI — Agentic Cloud OS Prototype</h3>
+            <p>AI-driven infrastructure prototype using LangGraph and React Flow — natural-language prompts converted into visual cloud topologies with drift-detection and self-healing simulation. Top 50 finalist, Lyzr AI Hackathon.</p>
+            <div class="tag-row"><span>LangGraph</span><span>React Flow</span><span>Drift Detection</span></div>
+          </div>
+          <div class="project-card__links">
+            <a href="https://twin-forge-fresh-link-952m.architect.space/" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+              <svg class="icon icon-xs"><use href="#i-external"/></svg> Live Demo
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="certifications" id="certifications">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal" data-reveal>Verified Credentials</p>
+      <h2 class="section-title reveal" data-reveal>Certifications</h2>
+
+      <div class="cert-grid">
+        <a href="https://www.credly.com/badges/4429060c-81f4-43d0-96bf-41c98db24343" target="_blank" rel="noopener noreferrer" class="cert-card reveal" data-reveal>
+          <span class="cert-card__badge"><svg class="icon"><use href="#i-award"/></svg></span>
+          <div>
+            <h3>AWS Cloud Architecting</h3>
+            <p>AWS Academy Graduate</p>
+          </div>
+          <svg class="icon icon-sm cert-card__ext"><use href="#i-arrow-up-right"/></svg>
+        </a>
+
+        <a href="https://www.credly.com/badges/9c86501b-9aec-48b9-a614-466bda512033" target="_blank" rel="noopener noreferrer" class="cert-card reveal" data-reveal>
+          <span class="cert-card__badge"><svg class="icon"><use href="#i-award"/></svg></span>
+          <div>
+            <h3>AWS Cloud Foundations</h3>
+            <p>AWS Academy Graduate</p>
+          </div>
+          <svg class="icon icon-sm cert-card__ext"><use href="#i-arrow-up-right"/></svg>
+        </a>
+
+        <a href="https://coursera.org/verify/J889OZOORASR" target="_blank" rel="noopener noreferrer" class="cert-card reveal" data-reveal>
+          <span class="cert-card__badge"><svg class="icon"><use href="#i-shield"/></svg></span>
+          <div>
+            <h3>Jenkins for Beginners</h3>
+            <p>Coursera / KodeKloud</p>
+          </div>
+          <svg class="icon icon-sm cert-card__ext"><use href="#i-arrow-up-right"/></svg>
+        </a>
+
+        <a href="https://coursera.org/verify/LDU6PJBEDWUK" target="_blank" rel="noopener noreferrer" class="cert-card reveal" data-reveal>
+          <span class="cert-card__badge"><svg class="icon"><use href="#i-boxes"/></svg></span>
+          <div>
+            <h3>Docker Fundamentals</h3>
+            <p>Coursera / LearnKarts</p>
+          </div>
+          <svg class="icon icon-sm cert-card__ext"><use href="#i-arrow-up-right"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS CONSOLE ============ -->
+  <section class="skills" id="skills">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal" data-reveal>Toolchain</p>
+      <h2 class="section-title reveal" data-reveal>Technical Skills</h2>
+
+      <div class="skills-groups">
+        <div class="skills-group reveal" data-reveal>
+          <h3><svg class="icon icon-sm"><use href="#i-cloud"/></svg> Cloud &amp; IaC</h3>
+          <div class="pill-row">
+            <span class="pill">Azure</span><span class="pill">AWS</span><span class="pill">Terraform</span><span class="pill">Bicep</span><span class="pill">Ansible</span><span class="pill">Kubernetes</span><span class="pill">Docker</span><span class="pill">Podman</span>
+          </div>
+        </div>
+        <div class="skills-group reveal" data-reveal>
+          <h3><svg class="icon icon-sm"><use href="#i-shield"/></svg> DevSecOps &amp; Security</h3>
+          <div class="pill-row">
+            <span class="pill">Semgrep</span><span class="pill">Trivy</span><span class="pill">SonarQube</span><span class="pill">OWASP ZAP</span><span class="pill">Checkov</span><span class="pill">Gitleaks</span>
+          </div>
+        </div>
+        <div class="skills-group reveal" data-reveal>
+          <h3><svg class="icon icon-sm"><use href="#i-terminal"/></svg> Automation &amp; Scripting</h3>
+          <div class="pill-row">
+            <span class="pill">Python</span><span class="pill">Bash / Shell</span><span class="pill">KQL</span><span class="pill">Google Docs API</span>
+          </div>
+        </div>
+        <div class="skills-group reveal" data-reveal>
+          <h3><svg class="icon icon-sm"><use href="#i-bot"/></svg> SRE, AI &amp; Telemetry</h3>
+          <div class="pill-row">
+            <span class="pill">LangGraph</span><span class="pill">AIOps</span><span class="pill">Azure Monitor</span><span class="pill">Prometheus</span><span class="pill">Grafana</span><span class="pill">Incident Response</span><span class="pill">RCA</span>
+          </div>
+        </div>
+        <div class="skills-group reveal" data-reveal>
+          <h3><svg class="icon icon-sm"><use href="#i-git-branch"/></svg> CI/CD &amp; Linux</h3>
+          <div class="pill-row">
+            <span class="pill">Azure DevOps</span><span class="pill">Jenkins</span><span class="pill">GitHub Actions</span><span class="pill">Git</span><span class="pill">Linux (Ubuntu)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal" data-reveal>Get in Touch</p>
+      <h2 class="section-title reveal" data-reveal>Let's build something reliable.</h2>
+
+      <div class="contact-card reveal" data-reveal>
+        <a href="mailto:harshilkumarpindikuru@gmail.com" class="contact-row">
+          <span class="contact-row__icon"><svg class="icon"><use href="#i-mail"/></svg></span>
+          <span class="contact-row__text">harshilkumarpindikuru@gmail.com</span>
+          <button type="button" class="copy-btn" id="copyEmailBtn" data-email="harshilkumarpindikuru@gmail.com" aria-label="Copy email address">
+            <svg class="icon icon-xs"><use href="#i-copy"/></svg>
+            <span class="copy-btn__label">Copy</span>
+          </button>
+        </a>
+        <a href="tel:+918125337069" class="contact-row">
+          <span class="contact-row__icon"><svg class="icon"><use href="#i-phone"/></svg></span>
+          <span class="contact-row__text">+91 8125337069</span>
+        </a>
+        <a href="https://www.linkedin.com/in/harshil-kumar-pindikuru-267b12250/" target="_blank" rel="noopener noreferrer" class="contact-row">
+          <span class="contact-row__icon"><svg class="icon"><use href="#i-linkedin"/></svg></span>
+          <span class="contact-row__text">linkedin.com/in/harshil-kumar-pindikuru-267b12250/</span>
+          <svg class="icon icon-sm contact-row__ext"><use href="#i-arrow-up-right"/></svg>
+        </a>
+        <a href="https://github.com/Harshil-kumar-4" target="_blank" rel="noopener noreferrer" class="contact-row">
+          <span class="contact-row__icon"><svg class="icon"><use href="#i-github"/></svg></span>
+          <span class="contact-row__text">github.com/Harshil-kumar-4</span>
+          <svg class="icon icon-sm contact-row__ext"><use href="#i-arrow-up-right"/></svg>
+        </a>
+        <a href="https://harshils.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="contact-row">
+          <span class="contact-row__icon"><svg class="icon"><use href="#i-rss"/></svg></span>
+          <span class="contact-row__text">harshils.hashnode.dev</span>
+          <svg class="icon icon-sm contact-row__ext"><use href="#i-arrow-up-right"/></svg>
+        </a>
+        <a href="HarshilKumar_Pindikuru_resume.pdf" download="HarshilKumar_Pindikuru_resume.pdf" class="contact-row">
+          <span class="contact-row__icon"><svg class="icon"><use href="#i-download"/></svg></span>
+          <span class="contact-row__text">Download Resume (PDF)</span>
+          <svg class="icon icon-sm contact-row__ext"><use href="#i-download"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-socials">
+      <a href="https://github.com/Harshil-kumar-4/portfolio" target="_blank" rel="noopener noreferrer" aria-label="Portfolio source on GitHub"><svg class="icon"><use href="#i-github"/></svg></a>
+      <a href="https://www.linkedin.com/in/harshil-kumar-pindikuru-267b12250/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin"/></svg></a>
+      <a href="mailto:harshilkumarpindikuru@gmail.com" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a>
+      <a href="https://harshils.hashnode.dev/" target="_blank" rel="noopener noreferrer" aria-label="Blog"><svg class="icon"><use href="#i-rss"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
