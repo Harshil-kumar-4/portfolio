@@ -95,13 +95,14 @@
     </div>
 
     <ul class="nav-menu" id="navMenu">
+      <li><a href="#blog" class="nav-link">Blog</a></li>
       <li><a href="#experience" class="nav-link">Experience</a></li>
       <li><a href="#projects" class="nav-link">Projects</a></li>
       <li><a href="#certifications" class="nav-link">Certifications</a></li>
       <li><a href="#skills" class="nav-link">Skills</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
       <li>
-        <a href="HarshilKumar_Pindikuru_resume.pdf" download="HarshilKumar_Pindikuru_resume.pdf" class="nav-link nav-link--resume">
+        <a href="https://drive.google.com/file/d/1cXD1y5Ll-WYzXrHpI9QMmVHJN3DkWIW0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-link nav-link--resume">
           <svg class="icon icon-sm"><use href="#i-download"/></svg> Resume
         </a>
       </li>
@@ -117,7 +118,7 @@
 
       <p class="eyebrow reveal" data-reveal>
         <svg class="icon icon-sm"><use href="#i-bot"/></svg>
-        Currently teaching production systems to reason about their own cost &amp; safety
+        Starting with the ticket, designing for the problem behind it
       </p>
 
       <div class="bento reveal" data-reveal>
@@ -131,13 +132,16 @@
             <span id="typedRole"></span><span class="hero-typed__cursor" aria-hidden="true">|</span>
           </p>
           <p class="hero-summary">
-            DevOps engineer who built hands-on cost optimization judgment through manual cloud
-            rightsizing work, then applied it to engineer an autonomous FinOps agent (Python,
-            LangGraph) that encodes production-safety guardrails static tools ignore. Experienced
-            across Azure automation, DevSecOps pipelines, and telemetry-driven infrastructure tooling.
+            I enjoy understanding why things work the way they do, finding where they fall short, and
+            building better ways to solve them. I work across cloud infrastructure, automation,
+            reliability, and agentic AI. My FinOps agent began as a manual Azure cost audit and became a
+            question: how could those rightsizing decisions be automated safely? I learn new tools when a
+            problem calls for them, write to explain what I learn, and want to keep building useful tools,
+            contributing to open source, and helping other developers build better things.
           </p>
+          <p class="hero-support">Engineering, AI, automation, and the ideas that emerge when you question the obvious.</p>
           <div class="hero-cta">
-            <a href="HarshilKumar_Pindikuru_resume.pdf" download="HarshilKumar_Pindikuru_resume.pdf" class="btn btn--primary">
+            <a href="https://drive.google.com/file/d/1cXD1y5Ll-WYzXrHpI9QMmVHJN3DkWIW0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
               <svg class="icon icon-sm"><use href="#i-download"/></svg> Download Resume
             </a>
             <a href="https://www.linkedin.com/in/harshil-kumar-pindikuru-267b12250/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
@@ -146,21 +150,44 @@
           </div>
         </article>
 
-        <!-- Card B — Primary impact stat -->
-        <article class="bento-card bento-b">
-          <svg class="icon stat-icon"><use href="#i-zap"/></svg>
-          <p class="stat-figure">$13.4k<span class="stat-figure__plus">+</span></p>
-          <p class="stat-label">Reclaimed</p>
-          <p class="stat-sub">Annual cloud savings — ~40% cost drop across 14 audited Azure App &amp; Function services.</p>
-        </article>
 
-        <!-- Card C — AIOps efficiency stat -->
-        <article class="bento-card bento-c">
-          <svg class="icon stat-icon stat-icon--cyan"><use href="#i-cpu"/></svg>
-          <p class="stat-figure stat-figure--cyan">75–85%</p>
-          <p class="stat-label">Token Reduction</p>
-          <p class="stat-sub">Cut from the FinOps agent's pipeline with zero drop in decision quality — details on request.</p>
-        </article>
+        <!-- Card G — How I work: problem → exploration → solution → improvement -->
+        <aside class="bento-card bento-g" aria-labelledby="flowTitle">
+          <div class="flow__head">
+            <h2 class="flow__label" id="flowTitle">How I work</h2>
+            <span class="flow__hint">a loop, not a line</span>
+          </div>
+          <ol class="flow" id="flow">
+            <li class="flow-node is-active">
+              <span class="flow-node__num" aria-hidden="true">01</span>
+              <div>
+                <p class="flow-node__title">Notice a gap</p>
+                <p class="flow-node__text">Something repetitive, fragile, or needlessly complicated.</p>
+              </div>
+            </li>
+            <li class="flow-node">
+              <span class="flow-node__num" aria-hidden="true">02</span>
+              <div>
+                <p class="flow-node__title">Understand the system</p>
+                <p class="flow-node__text">Question assumptions. Find the actual constraint.</p>
+              </div>
+            </li>
+            <li class="flow-node">
+              <span class="flow-node__num" aria-hidden="true">03</span>
+              <div>
+                <p class="flow-node__title">Build a solution</p>
+                <p class="flow-node__text">Experiment until the observation becomes something practical.</p>
+              </div>
+            </li>
+            <li class="flow-node">
+              <span class="flow-node__num" aria-hidden="true">04</span>
+              <div>
+                <p class="flow-node__title">Question it again</p>
+                <p class="flow-node__text">Failure cases, missing safeguards, what could be better.</p>
+              </div>
+            </li>
+          </ol>
+        </aside>
 
         <!-- Card F — Quick-link CTAs -->
         <article class="bento-card bento-f">
@@ -194,68 +221,200 @@
     </div>
   </section>
 
-  <!-- ============ FINOPS ARCHITECTURE DEEP DIVE ============ -->
+  <!-- ============ FINOPS — PRODUCT STORY TEASER ============ -->
   <section class="finops" id="finops">
     <div class="section-inner">
-      <p class="section-eyebrow reveal" data-reveal>System Architecture</p>
-      <h2 class="section-title reveal" data-reveal>Autonomous Multi-Cloud FinOps Engine</h2>
-      <p class="section-sub reveal" data-reveal>LangGraph + Python — a state-machine agent that automates rightsizing analysis while encoding the production-safety judgment a human SRE applies instinctively. <span class="section-sub__note">A few implementation details below are intentionally kept high-level — ask me about the internals.</span></p>
+      <p class="section-eyebrow reveal" data-reveal>Product Story</p>
+      <h2 class="section-title shift-title reveal" data-reveal>
+        <span class="shift-title__from">Manual cost optimization</span>
+        <svg class="icon shift-title__arrow" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+        <span class="sr-only">to</span>
+        <span class="shift-title__to">Autonomous FinOps architecture</span>
+      </h2>
+      <p class="section-sub reveal" data-reveal>Started with a cloud cost optimization task. The real challenge became figuring out how to automate the judgment behind it without ignoring production safety.</p>
 
-      <div class="finops-grid">
-        <div class="finops-highlights">
-          <div class="finops-item reveal" data-reveal>
-            <svg class="icon finops-item__icon"><use href="#i-shield"/></svg>
-            <div>
-              <h3>SRE Crash-Detection Guardrail</h3>
-              <p>Before recommending a downsize, the agent checks whether the service is already failing — a deliberate safeguard against false-positive resizing on anything actively crashing. <em>How</em> it makes that call is one of the more interesting design decisions in the system.</p>
-            </div>
+      <div class="metrics-strip reveal" data-reveal>
+        <div class="finops-metric">
+          <div class="finops-metric__head">
+            <p class="stat-figure">$13,400<span class="stat-figure__plus">+</span></p>
+            <p class="stat-label">Annual savings</p>
           </div>
-          <div class="finops-item reveal" data-reveal>
-            <svg class="icon finops-item__icon"><use href="#i-network"/></svg>
-            <div>
-              <h3>Multi-Cloud Abstraction</h3>
-              <p>A <code>ProviderRegistry</code> architecture that supports Azure, Databricks, and Snowflake behind one consistent interface.</p>
-            </div>
-          </div>
-          <div class="finops-item reveal" data-reveal>
-            <svg class="icon finops-item__icon"><use href="#i-lock"/></svg>
-            <div>
-              <h3>Deterministic Execution</h3>
-              <p>All monetary arithmetic and rate lookups are offloaded directly to Python — eliminating LLM hallucination risk from financial decisions.</p>
-            </div>
-          </div>
-          <div class="finops-item reveal" data-reveal>
-            <svg class="icon finops-item__icon"><use href="#i-activity"/></svg>
-            <div>
-              <h3>Token Efficiency Pipeline</h3>
-              <p>A deliberate data-shaping strategy cuts token usage 75–85% with zero drop in decision quality — the specific technique is part of the system's design, and one I'm happy to walk through in a conversation.</p>
-            </div>
-          </div>
+          <p class="stat-sub">Identified through targeted rightsizing of the audited resources.</p>
         </div>
-
-        <!-- Simulated Interactive Telemetry Console -->
-        <div class="console reveal" data-reveal aria-label="Simulated FinOps agent telemetry trace">
-          <div class="console__head">
-            <span class="console-dot console-dot--red"></span>
-            <span class="console-dot console-dot--yellow"></span>
-            <span class="console-dot console-dot--green"></span>
-            <span class="console__title">finops-agent — telemetry trace (simulated)</span>
+        <div class="finops-metric">
+          <div class="finops-metric__head">
+            <p class="stat-figure">~40%</p>
+            <p class="stat-label">Cost reduction</p>
           </div>
-          <div class="console__body" id="consoleBody">
-            <p class="console-line" data-line>$ finops-agent audit --service app-svc-prod-07</p>
-            <p class="console-line" data-line><span class="c-muted">&gt;</span> fetching telemetry <span class="c-muted">::</span> azure_monitor/app-svc-prod-07</p>
-            <p class="console-line" data-line><span class="c-muted">&gt;</span> cpu: <span class="c-cyan">12.4%</span>&nbsp;&nbsp;mem: <span class="c-cyan">18.1%</span></p>
-            <p class="console-line" data-line><span class="c-muted">&gt;</span> candidate: <span class="c-emerald">DOWNSIZE</span> (Standard S2 → S1)</p>
-            <p class="console-line" data-line><span class="c-muted">&gt;</span> running guardrail: crash_loop_detector</p>
-            <p class="console-line console-line--kql" data-line><span class="c-muted">&gt;</span> guardrail logic: <span class="c-cyan">[proprietary — ask me]</span></p>
-            <p class="console-line" data-line><span class="c-muted">&gt;</span> crash_loop: <span class="c-red">TRUE</span></p>
-            <p class="console-line console-line--block" data-line>✕ DECISION: BLOCKED</p>
-            <p class="console-line console-line--indent" data-line>reason: "active crash loop detected — resizing suppressed to avoid masking failure"</p>
-            <p class="console-line console-line--indent" data-line>status: escalated_to_human_review</p>
-            <p class="console-line" data-line><span class="console-cursor">▌</span></p>
+          <p class="stat-sub">Across the audited resources.</p>
+        </div>
+        <div class="finops-metric finops-metric--cyan">
+          <div class="finops-metric__head">
+            <p class="stat-figure stat-figure--cyan">~75–85%</p>
+            <p class="stat-label">Lower token usage</p>
           </div>
+          <p class="stat-sub">From optimizing the agent's processing pipeline.</p>
         </div>
       </div>
+
+      <div class="journey-phases reveal" data-reveal aria-hidden="true">
+        <span class="journey-phases__item journey-phases__item--manual">Manual work</span>
+        <span class="journey-phases__item journey-phases__item--design">Independent analysis &amp; architecture design</span>
+      </div>
+
+      <ol class="journey">
+        <li class="journey-step reveal" data-reveal style="--p:0.15">
+          <div class="journey-step__viz">
+            <svg viewBox="0 0 120 48" role="img" aria-label="Rows of resource usage bars, one flagged">
+              <rect class="v-fill" x="10" y="8" width="70" height="6" rx="3"/>
+              <rect class="v-fill" x="10" y="21" width="48" height="6" rx="3"/>
+              <rect class="v-fill" x="10" y="34" width="86" height="6" rx="3"/>
+              <circle class="v-dot-cyan" cx="66" cy="24" r="4"/>
+            </svg>
+          </div>
+          <div class="journey-step__body">
+            <span class="journey-step__num">01</span>
+            <h3>Manual audit</h3>
+            <p>Investigated live cloud resources and identified $13,400+ in annual savings through targeted rightsizing.</p>
+          </div>
+        </li>
+
+        <li class="journey-step journey-step--pivot reveal" data-reveal style="--p:0.4">
+          <div class="journey-step__viz">
+            <svg viewBox="0 0 120 48" role="img" aria-label="Two nodes joined by arrows that loop, representing a repeatable process">
+              <circle class="v-dot-line" cx="24" cy="24" r="5"/>
+              <circle class="v-dot-line" cx="96" cy="24" r="5"/>
+              <path class="v-cyan" d="M30 17C50 2 70 2 90 17"/>
+              <path class="v-cyan-fill" d="M90 17l-6 0.5 3-5z"/>
+              <path class="v-cyan" d="M90 31C70 46 50 46 30 31"/>
+              <path class="v-cyan-fill" d="M30 31l6-0.5-3 5z"/>
+            </svg>
+          </div>
+          <div class="journey-step__body">
+            <span class="journey-step__num">02 <span class="badge badge--accent">turning point</span></span>
+            <h3>Recognized the opportunity</h3>
+            <p>Asked how the judgment behind each manual call could become repeatable.</p>
+          </div>
+        </li>
+
+        <li class="journey-step reveal" data-reveal style="--p:0.6">
+          <div class="journey-step__viz">
+            <svg viewBox="0 0 120 48" role="img" aria-label="Three connected components with branches, representing an architecture">
+              <rect class="v-box" x="8" y="18" width="26" height="12" rx="3"/>
+              <rect class="v-box v-box--accent" x="47" y="18" width="26" height="12" rx="3"/>
+              <rect class="v-box" x="86" y="18" width="26" height="12" rx="3"/>
+              <path class="v-line" d="M34 24H47M73 24H86M60 18V9M60 30V39"/>
+              <circle class="v-dot-line" cx="60" cy="6" r="3"/>
+              <circle class="v-dot-line" cx="60" cy="42" r="3"/>
+            </svg>
+          </div>
+          <div class="journey-step__body">
+            <span class="journey-step__num">03</span>
+            <h3>Designed the architecture</h3>
+            <p>Turned the problem into an autonomous FinOps agent design using Python and LangGraph.</p>
+          </div>
+        </li>
+
+        <li class="journey-step reveal" data-reveal style="--p:0.8">
+          <div class="journey-step__viz">
+            <svg viewBox="0 0 120 48" role="img" aria-label="A flat, healthy-looking metric line above a row of red error ticks">
+              <path class="v-cyan" d="M6 14H40l4-2 4 4 4-2H114"/>
+              <path class="v-line" d="M6 30H114" stroke-dasharray="2 4"/>
+              <path class="v-red" d="M26 34v8M44 34v8M50 34v8M72 34v8M78 34v8M84 34v8M98 34v8"/>
+            </svg>
+          </div>
+          <div class="journey-step__body">
+            <span class="journey-step__num">04</span>
+            <h3>Added production awareness</h3>
+            <p>Healthy-looking metrics don't mean a healthy workload, so a KQL exception-log audit blocks downsizing for services in active crash loops.</p>
+          </div>
+        </li>
+
+        <li class="journey-step reveal" data-reveal style="--p:1">
+          <div class="journey-step__viz">
+            <svg viewBox="0 0 120 48" role="img" aria-label="Four bars shrinking from tall to short, representing reduced token usage">
+              <rect class="v-fill-emerald" x="14" y="8" width="16" height="34" rx="3"/>
+              <rect class="v-fill-emerald" x="38" y="18" width="16" height="24" rx="3"/>
+              <rect class="v-fill-emerald" x="62" y="27" width="16" height="15" rx="3"/>
+              <rect class="v-fill-emerald" x="86" y="34" width="16" height="8" rx="3"/>
+            </svg>
+          </div>
+          <div class="journey-step__body">
+            <span class="journey-step__num">05</span>
+            <h3>Optimized the agent</h3>
+            <p>Cut token usage ~75–85% with statistical profiles, selective log retrieval, deterministic math, and local semantic caching.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="finops-cta reveal" data-reveal>
+        <a href="https://harshil-kumar-4.github.io/FinOps-story/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--story">
+          Explore the product story <svg class="icon icon-sm"><use href="#i-arrow-right"/></svg>
+        </a>
+        <p class="finops-cta__note">Architecture, trade-offs, safety considerations, and lessons learned.</p>
+      </div>
+      <p class="finops-footnote reveal" data-reveal>The savings and ~40% figures come from the manual audit of selected Azure resources. The token reduction applies to the agent's processing pipeline.</p>
+    </div>
+  </section>
+
+  <!-- ============ BLOG ============ -->
+  <section class="blog-series" id="blog">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal" data-reveal>From the Blog</p>
+      <h2 class="section-title reveal" data-reveal>What I'm learning, written down</h2>
+      <p class="section-sub reveal" data-reveal>I write to understand things properly. Some of it is how I think; some of it is what I'm building and learning along the way.</p>
+
+      <div class="blog-stack">
+        <!-- Featured essay -->
+        <article class="series-card series-card--reverse reveal" data-reveal>
+          <a class="series-card__media" href="https://harshils.hashnode.dev/understanding-before-implementation-ai-era" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+            <img src="https://cdn.hashnode.com/uploads/covers/64785749df568fcca4894b4c/7549b0da-4112-4821-ad06-5617278b570e.jpg" alt="" width="1200" height="630" loading="lazy" decoding="async" />
+          </a>
+          <div class="series-card__body">
+            <div class="series-card__meta">
+              <span class="badge badge--accent">featured essay</span>
+              <span class="series-card__source">Hashnode</span>
+            </div>
+            <h3>Understanding Before Implementation in the AI Era</h3>
+            <p>When AI can generate an endpoint, a query, or a pipeline in seconds, it's easy to mistake generating an implementation for understanding a system. An argument for building a mental model first, using my FinOps agent as the worked example, and for keeping judgment in the loop even when code is nearly free.</p>
+            <div class="series-card__cta">
+              <a href="https://harshils.hashnode.dev/understanding-before-implementation-ai-era" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                Read the article <svg class="icon icon-sm"><use href="#i-arrow-right"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Agentic AI series (existing) -->
+        <article class="series-card reveal" data-reveal>
+          <a class="series-card__media" href="https://harshils.hashnode.dev/series/culinary-architecture-agentic-ai" target="_blank" rel="noopener noreferrer" aria-label="Read The Culinary Architecture of Agentic AI on Hashnode" tabindex="-1">
+            <img src="https://cdn.hashnode.com/uploads/og-images/64785749df568fcca4894b4c/2276c9f8-7ba4-49fb-ac73-f8016666dc68.png" alt="Cover image for the blog series The Culinary Architecture of Agentic AI" width="1200" height="630" loading="lazy" decoding="async" />
+          </a>
+          <div class="series-card__body">
+            <div class="series-card__meta">
+              <span class="badge badge--live">ongoing series</span>
+              <span class="series-card__source">Hashnode</span>
+            </div>
+            <h3>The Culinary Architecture of Agentic AI</h3>
+            <p>A layered guide to understanding how modern agentic AI systems are built—from foundation models and tools to orchestration, RAG, memory, agent communication, security, and observability. Using a culinary architecture metaphor, this series breaks down the components that turn an LLM into a reliable autonomous system.</p>
+            <div class="series-card__cta">
+              <a href="https://harshils.hashnode.dev/series/culinary-architecture-agentic-ai" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                <svg class="icon icon-sm"><use href="#i-rss"/></svg> Read the Series
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <aside class="blog-cta reveal" data-reveal>
+        <div>
+          <h3>Enjoy exploring how I think through problems?</h3>
+          <p>There's more on the blog — ideas, experiments, and things I'm learning along the way.</p>
+        </div>
+        <a href="https://harshils.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">
+          Read more on Hashnode <svg class="icon icon-sm"><use href="#i-arrow-right"/></svg>
+        </a>
+      </aside>
     </div>
   </section>
 
@@ -534,7 +693,7 @@
           <span class="contact-row__text">harshils.hashnode.dev</span>
           <svg class="icon icon-sm contact-row__ext"><use href="#i-arrow-up-right"/></svg>
         </a>
-        <a href="HarshilKumar_Pindikuru_resume.pdf" download="HarshilKumar_Pindikuru_resume.pdf" class="contact-row">
+        <a href="https://drive.google.com/file/d/1cXD1y5Ll-WYzXrHpI9QMmVHJN3DkWIW0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="contact-row">
           <span class="contact-row__icon"><svg class="icon"><use href="#i-download"/></svg></span>
           <span class="contact-row__text">Download Resume (PDF)</span>
           <svg class="icon icon-sm contact-row__ext"><use href="#i-download"/></svg>
