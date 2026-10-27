@@ -1,7 +1,7 @@
 /* ==========================================================================
    HARSHIL KUMAR — PORTFOLIO V2 SCRIPT
    Init → Theme Toggle → Navbar Scroll → Mobile Nav → Scroll Reveal →
-   Telemetry Console → Timeline Fill → Cursor Glow → Card Tilt →
+   Flow Diagram → Timeline Fill → Cursor Glow → Card Tilt →
    Copy Email → Footer Year
    ========================================================================== */
 
@@ -18,7 +18,7 @@
     initNavbarScroll();
     initMobileNav();
     initScrollReveal();
-    initConsoleReveal();
+    initFlowDiagram();
     initTimelineFill();
     initCursorGlow();
     initCardTilt();
@@ -171,34 +171,43 @@
   }
 
   /* ------------------------------------------------------------------------
-     TELEMETRY CONSOLE — reveals the mock trace line by line once in view
+     HERO FLOW DIAGRAM — highlights one step at a time while visible;
+     hover/tap picks a step and pauses the cycle. Static under reduced motion.
      ------------------------------------------------------------------------ */
-  function initConsoleReveal() {
-    const body = document.getElementById("consoleBody");
-    if (!body) return;
-    const lines = body.querySelectorAll("[data-line]");
+  function initFlowDiagram() {
+    const flow = document.getElementById("flow");
+    if (!flow) return;
+    const nodes = Array.from(flow.querySelectorAll(".flow-node"));
+    if (!nodes.length) return;
 
-    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-      lines.forEach((l) => l.classList.add("is-visible"));
-      return;
+    let active = 0;
+    let timer = null;
+    let paused = false;
+    let visible = false;
+    const STEP_MS = 2600;
+
+    function setActive(i) {
+      active = i;
+      nodes.forEach((n, idx) => n.classList.toggle("is-active", idx === i));
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            lines.forEach((line, i) => {
-              line.style.animationDelay = `${i * 0.16}s`;
-              line.classList.add("is-visible");
-            });
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() {
+      if (prefersReducedMotion || timer || paused || !visible) return;
+      timer = setInterval(() => setActive((active + 1) % nodes.length), STEP_MS);
+    }
 
-    observer.observe(body);
+    nodes.forEach((node, i) => {
+      node.addEventListener("mouseenter", () => { paused = true; stop(); setActive(i); });
+      node.addEventListener("mouseleave", () => { paused = false; start(); });
+      node.addEventListener("click", () => setActive(i));
+    });
+
+    if (prefersReducedMotion || !("IntersectionObserver" in window)) return;
+    new IntersectionObserver((entries) => {
+      visible = entries[0].isIntersecting;
+      if (visible) start(); else stop();
+    }, { threshold: 0.3 }).observe(flow);
   }
 
   /* ------------------------------------------------------------------------
